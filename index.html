@@ -6,26 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora IMC</title>
+
     <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
-    <header><h1>CALCULADORA DE IMC</h1></header>
 
-    <section>
+    <header>
+        <h1>CALCULADORA DE IMC</h1>
+    </header>
+
+    <section class="area">
         <p>Digite seu peso (Kg):</p>
         <input type="number" name="txtn1" id="txtn1">
         <p>Digite sua Altura (m):</p>
         <input type="number" name="txtn2" id="txtn2">
         <br><input type="button" value="Calcular" onclick="calcular()">
 
-        <div id="res"></div> <!--Local onde aparece o IMC--> 
-        <div id="faixa"></div> <!--Local onde aparece a faixa de peso-->
+        <div id="res"></div>
+
     </section>
 
-    <footer></footer>
-    
+    <footer>&copy;Fransuelton</footer>
+
     <script src="./src/index.js"></script>
+
 </body>
 
 </html>
