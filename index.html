@@ -13,15 +13,19 @@
 <body>
 
     <header>
-        <h1>CALCULADORA DE IMC</h1>
+        <h1>Calculadora de IMC</h1>
     </header>
 
     <section class="area">
-        <p>Digite seu peso (Kg):</p>
-        <input type="number" name="txtn1" id="txtn1">
-        <p>Digite sua Altura (m):</p>
-        <input type="number" name="txtn2" id="txtn2">
-        <br><input type="button" value="Calcular" onclick="calcular()">
+        <h3>Insira as informações abaixo:</h3>
+
+        <label for="pesokg">Peso</label>
+        <input type="number" name="pesokg" id="pesokg" placeholder="Ex: 75"><br>
+
+        <label for="alturam">Altura</label>
+        <input type="number" name="alturam" id="alturam" placeholder="Ex: 1,77"><br>
+
+        <input id="botao" type="button" value="Calcular" onclick="calcular()">
 
         <div id="res"></div>
 
