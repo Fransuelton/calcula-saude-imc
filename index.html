@@ -1,40 +1,85 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora IMC</title>
-
-    <link rel="stylesheet" href="./src/style.css">
+    <meta name="description" content="Aqui no IMC CalculaSaúde você pode calcular seu IMC (Índice de Massa Corporal)">
+    <link rel="shortcut icon" href="./src/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/scrollbar.css">
+    <link rel="stylesheet" href="./src/css/font-awesome.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/responsive.css">
+    <title>IMC CalculaSaúde</title>
 </head>
 
 <body>
+    <header class="header">
+        <div class="logo">
+            <img src="./src/images/logo.png" alt="logo imc">
+            <h1 class="title">IMC CalculaSaúde</h1>
+        </div>
 
-    <header>
-        <h1>Calculadora de IMC</h1>
+        <input class="toggle-theme" type="checkbox" id="switch" /><label for="switch">Toggle</label>
     </header>
 
-    <section class="area">
-        <h3>Insira as informações abaixo:</h3>
+    <main class="container">
+        <section class="card">
+            <h2 class="card-title">Calculadora de IMC</h2>
+            <p class="info-text">Coloque os seus dados na calculadora e calcule o seu IMC:</p>
 
-        <label for="pesokg">Peso</label>
-        <input type="number" name="pesokg" id="pesokg" placeholder="Ex: 75"><br>
+            <hr>
 
-        <label for="alturam">Altura</label>
-        <input type="number" name="alturam" id="alturam" placeholder="Ex: 1,77"><br>
+            <form action="index.html" method="get" class="form">
 
-        <input id="botao" type="button" value="Calcular" onclick="calcular()">
+                <label>Sexo</label>
+                <div class="radio-container">
+                    <div class="male">
+                        <label for="male">Masculino</label>
+                        <input type="radio" name="gender" id="male" value="male">
+                    </div>
 
-        <div id="res"></div>
+                    <div class="female">
+                        <label for="female">Feminino</label>
+                        <input type="radio" name="gender" id="female" value="female">
+                    </div>
+                </div>
 
-    </section>
+                <label for="age">Idade</label>
+                <input type="number" name="age" id="age" placeholder="Ex: 35" class="input">
 
-    <footer>&copy;Fransuelton</footer>
+                <label for="weight">Peso</label>
+                <input type="number" name="weight" id="weight" placeholder="Ex: 75" class="input">
 
-    <script src="./src/index.js"></script>
+                <label for="height">Altura</label>
+                <input type="number" name="height" id="height" placeholder="Ex: 1,77" class="input">
 
+                <input type="submit" value="Calcular" class="submit-button">
+            </form>
+        </section>
+
+        <div class="result"></div>
+    </main>
+
+    <footer class="footer">
+        <nav>
+            <ul class="menu">
+                <li><a href="#"><i class="fa-brands fa-square-github"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-square-facebook"></i></a></li>
+            </ul>
+        </nav>
+
+        <p>&copy;2023 Fransuelton | All Rights Reserved</p>
+        <a href="https://www.flaticon.com/free-icons/bmi" title="bmi icons" target="_blank">Bmi icons created by
+            photo3idea_studio - Flaticon</a>
+    </footer>
+
+    <script src="./src/js/index.js"></script>
 </body>
 
 </html>
