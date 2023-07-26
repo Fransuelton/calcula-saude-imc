@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 2rem;
+    background-color: #fff;
+}
+
+.header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header .logo .title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.header .toggle-theme {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.header label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 8rem;
+    height: 4rem;
+    background: rgb(128, 128, 128);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.header label:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 3rem;
+    height: 3rem;
+    background: #fff;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.header .toggle-theme:checked+label {
+    background: #bada55;
+}
+
+.header .toggle-theme:checked+label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #009CF7;
+    height: 55rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.card .card-title {
+    font-size: clamp(2.5rem, 4vw, 3rem);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card .info-text {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.form .radio-container {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.form .radio-container .male,
+.female {
+    border: 1px solid #ccd0d5;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.form .radio-container .male input {
+    accent-color: blue;
+}
+
+.form .radio-container .female input {
+    accent-color: deeppink;
+}
+
+.form label {
+    font-size: 1.5rem;
+}
+
+.form .input {
+    width: 17rem;
+    height: 3rem;
+    padding-left: 0.5rem;
+    border: 1px solid #ccd0d5;
+    border-radius: 1rem;
+}
+
+.form .input::placeholder {
+    color: #000;
+    font-weight: 700;
+}
+
+.form .submit-button {
+    cursor: pointer;
+    align-self: center;
+    margin-top: 1rem;
+    width: 100%;
+    height: 5rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #02A437;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: 0.3s ease-in-out;
+}
+
+.form .submit-button:hover {
+    background-color: #036d26;
+}
+
+.footer {
+    width: 100%;
+    background: #009CF7;
+    padding: 2rem 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.footer i {
+    font-size: 3rem;
+    color: #fff;
+    margin: 0 1rem;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    font-weight: 300;
+}
+
+.footer i:hover {
+    opacity: 1;
+}
+
+.footer p,
+a {
+    color: #fff;
+    margin: 1.5rem 0 1rem 0;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* Remove Arrows/Spinners */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Dark Mode */
+
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-footer {
+    background: rgb(34, 34, 34)
+}
+
+.dark-letter {
+    color: #000;
+}
