@@ -30,3 +30,19 @@ changeThemeBtn.addEventListener("click", () => {
         footer.classList.add("dark-footer")
     }
 })
+
+
+const modal = document.getElementById('modal');
+
+function showModal() {
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Mostrar o Popup Modal quando a página for carregada
+window.onload = function() {
+  showModal();
+};
