@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+body{
+    background: #009CF7;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -31,7 +35,7 @@
     text-indent: -9999px;
     width: 8rem;
     height: 4rem;
-    background: rgb(128, 128, 128);
+    background: #28292C;
     display: block;
     border-radius: 100px;
     position: relative;
@@ -44,13 +48,17 @@
     left: 5px;
     width: 3rem;
     height: 3rem;
-    background: #fff;
+    background: #F5F5F5;
     border-radius: 50%;
     transition: 0.3s;
 }
 
 .header .toggle-theme:checked+label {
-    background: #bada55;
+    background: #F5F5F5;
+}
+
+.header .toggle-theme:checked+label::after {
+    background: #28292C;
 }
 
 .header .toggle-theme:checked+label:after {
@@ -63,14 +71,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #009CF7;
-    height: 55rem;
+    height: 60rem;
 }
 
 .card {
     background-color: #fff;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 3rem;
+    width: 43rem;
+    height: 50rem;
 }
 
 .card .card-title {
@@ -80,7 +89,7 @@
 }
 
 .card .info-text {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: 1.5rem;
     padding: 1rem 0;
     text-align: center;
 }
@@ -89,54 +98,56 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    margin: 1rem 0;
+    margin-top: 1rem;
 }
 
-.form .radio-container {
+.form .radios-container {
     display: flex;
     gap: 0.5rem;
 }
 
-.form .radio-container .male,
-.female {
-    border: 1px solid #ccd0d5;
-    border-radius: 1rem;
-    padding: 1rem;
-}
-
-.form .radio-container .male input {
-    accent-color: blue;
-}
-
-.form .radio-container .female input {
-    accent-color: deeppink;
-}
-
-.form label {
+.form .radios-container label {
     font-size: 1.5rem;
 }
 
+.form .radios-container input {
+    margin-left: 0.5rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form .radios-container .male-radio-container,
+.female-radio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccd0d5;
+    border-radius: 0.5rem;
+    height: 5rem;
+    width: 10rem;
+}
+
 .form .input {
-    width: 17rem;
-    height: 3rem;
+    width: 20rem;
+    height: 5rem;
     padding-left: 0.5rem;
     border: 1px solid #ccd0d5;
-    border-radius: 1rem;
+    border-radius: 2rem;
+    font-size: 2rem;
 }
 
-.form .input::placeholder {
-    color: #000;
-    font-weight: 700;
-}
-
-.form .submit-button {
+.form .submit-button, .return-btn {
     cursor: pointer;
     align-self: center;
     margin-top: 1rem;
     width: 100%;
     height: 5rem;
     border: none;
-    border-radius: 1rem;
+    border-radius: 2rem;
     background-color: #02A437;
     color: #fff;
     text-transform: uppercase;
@@ -144,13 +155,21 @@
     transition: 0.3s ease-in-out;
 }
 
-.form .submit-button:hover {
+.form .submit-button:hover,
+.return-btn:hover {
     background-color: #036d26;
+}
+
+.form label {
+    font-size: 1.8rem;
+}
+
+.form .input::placeholder {
+    font-size: 1.5rem;
 }
 
 .footer {
     width: 100%;
-    background: #009CF7;
     padding: 2rem 5rem;
     display: flex;
     justify-content: center;
@@ -187,29 +206,40 @@ a {
     font-weight: 300;
 }
 
-/* Remove Arrows/Spinners */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+.result-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
 }
 
-/* Dark Mode */
-
-.dark-mode {
-    background-color: #000;
-    color: #fff;
+.result-card .text{
+    font-size: 3rem;
+    margin: 2rem 0;
+    font-weight: 700;
 }
 
-.dark-footer {
-    background: rgb(34, 34, 34)
+.result-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 1rem;
+    height: 15rem;
+    width: 100%;
 }
 
-.dark-letter {
+.result-container .result-text {
+    font-size: clamp(1.7rem, 4vw, 2rem);
+    text-align: center;
     color: #000;
 }
 
-/* Estilos do Popup Modal */
+.result-card .return-btn {
+    margin-top: 12.1rem;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -217,7 +247,7 @@ input::-webkit-inner-spin-button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
 }
@@ -226,11 +256,45 @@ input::-webkit-inner-spin-button {
     font-size: 1.5rem;
     text-align: center;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 2rem;
+    border-radius: 3rem;
+    width: 50rem;
+    position: relative;
+}
+
+.modal-content p {
+    margin-top: 1rem;
 }
 
 .close-btn {
-    margin-top: 10px;
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.close-btn:hover {
+    color: #02A437;
+}
+
+.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+.dark-section {
+    color: #fff;
+    background: rgb(34, 34, 34);
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    visibility: visible;
 }
