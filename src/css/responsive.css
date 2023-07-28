@@ -1,5 +1,14 @@
 @media (max-width: 576px) {
     .card {
         width: 35rem;
+        height: 51rem;
+    }
+
+    .form .input {
+        width: 100%;
+    }
+
+    .form .radios-container{
+        gap: 2rem;
     }
 }
